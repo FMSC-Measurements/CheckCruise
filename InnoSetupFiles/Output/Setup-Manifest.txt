@@ -1,0 +1,16 @@
+Index	SourceFilename	TimeStamp	Version	SHA1Sum	OriginalSize	FirstSlice	LastSlice	StartOffset	ChunkSuboffset	ChunkCompressedSize	Encrypted
+0	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\CheckCruise.exe	2020-03-17 13:50:12.000		ecba520c674ffca4180bc4ff708aee7cf2c20949	769536	1	1	0	0	2939307	no
+1	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\CheckCruise.exe.config	2020-03-13 10:01:34.000		f2e9f86fe3ca9ac37f9b6cc333e8759e057cb193	535	1	1	0	769536	2939307	no
+2	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\CheckCruise.pdb	2020-03-17 13:50:12.000		981a1a057697113129c6b68af424c5d868843451	253440	1	1	0	770071	2939307	no
+3	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\Backpack.SqlBuilder.dll	2019-06-07 16:42:20.000		e0dc85aa16591dafe1d36f4657a7f108acb78331	29184	1	1	0	1023511	2939307	no
+4	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\CruiseDAL.Core.dll	2019-09-16 21:42:24.000		e58ea714feee135d8c4e4dbe025f05719ef948f9	38400	1	1	0	1052695	2939307	no
+5	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\CruiseDAL.V2.dll	2019-09-16 21:42:26.000		55c88e6f6e1e18f1dd1470c388bcb495787cf399	375296	1	1	0	1091095	2939307	no
+6	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\EntityFramework.dll	2019-09-14 17:01:16.000		46e30b9281bdb74890d8b26c71b02970124e5fc0	4770680	1	1	0	1466391	2939307	no
+7	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\EntityFramework.SqlServer.dll	2019-09-14 17:01:24.000		53ae3a97d08acf998c63db0178af63dabb0290ab	586616	1	1	0	6237071	2939307	no
+8	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\FMSC.ORM.dll	2019-09-16 21:42:20.000		02075f3b9dde094735ce0c7b9e7140419bdd31c6	66560	1	1	0	6823687	2939307	no
+9	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\System.Data.SQLite.dll	2019-10-27 06:38:36.000		5a9cfd0b619bb771ed93c09970103eec8656e07b	363520	1	1	0	6890247	2939307	no
+10	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\System.Data.SQLite.EF6.dll	2019-10-27 06:38:38.000		9cb6d293d52beb490fc60756ade36e940f70cf6d	186880	1	1	0	7253767	2939307	no
+11	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\System.Data.SQLite.Linq.dll	2019-10-27 06:38:38.000		0d1c79e8094d582b7288fc618539f73864a2a6c9	186880	1	1	0	7440647	2939307	no
+12	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\Backpack.SqlBuilder.pdb	2019-06-07 16:42:20.000		bcec9000d7ee85e3d5431d9a0d9cbc13001c23f8	11680	1	1	0	7627527	2939307	no
+13	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\x86\SQLite.Interop.dll	2019-10-27 06:34:20.000		a5c73f09a925200b66e3be816c90dbd6d5d4a0de	1246720	1	1	0	7639207	2939307	no
+14	C:\Development\CSharp\CheckCruiseVS15\InnoSetupFiles\..\CheckCruise\bin\Release\x64\SQLite.Interop.dll	2019-10-27 06:39:20.000		d54dbc66d53784b10fa2bbc33accbec598a999aa	1639936	1	1	0	8885927	2939307	no

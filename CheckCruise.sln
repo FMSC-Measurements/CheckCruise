@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckCruise", "CheckCruise\CheckCruise.csproj", "{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CheckCruise|Any CPU = CheckCruise|Any CPU
+		CheckCruise|x86 = CheckCruise|x86
+		Debug with args|Any CPU = Debug with args|Any CPU
+		Debug with args|x86 = Debug with args|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release PC|Any CPU = Release PC|Any CPU
+		Release PC|x86 = Release PC|x86
+		Release with args|Any CPU = Release with args|Any CPU
+		Release with args|x86 = Release with args|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.CheckCruise|Any CPU.ActiveCfg = CheckCruise|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.CheckCruise|Any CPU.Build.0 = CheckCruise|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.CheckCruise|x86.ActiveCfg = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.CheckCruise|x86.Build.0 = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug with args|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug with args|Any CPU.Build.0 = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug with args|x86.ActiveCfg = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Debug|x86.Build.0 = Debug|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release PC|Any CPU.ActiveCfg = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release PC|Any CPU.Build.0 = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release PC|x86.ActiveCfg = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release with args|Any CPU.ActiveCfg = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release with args|Any CPU.Build.0 = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release with args|x86.ActiveCfg = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release|x86.ActiveCfg = Release|Any CPU
+		{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B73C59A-6559-43DA-8B56-FBA9A3E6FC40}
+	EndGlobalSection
+EndGlobal
