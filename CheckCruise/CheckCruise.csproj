@@ -1,256 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{19BEE7B3-0A3A-420B-98CA-A21EE9BB3D84}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CheckCruise</RootNamespace>
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup Label="Assembily Info">
     <AssemblyName>CheckCruise</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <RootNamespace>CheckCruise</RootNamespace>   
+    <Copyright>CC0 Public Domain</Copyright>
+    <Company>USDA Forest Service</Company>
+    <Authors>Ken Cormier</Authors>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Build Config">
+	<TargetFramework>net472</TargetFramework>
+    <OutputType>WinExe</OutputType>    
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>$(RootNamespace).Program</StartupObject>
     <ApplicationIcon>cruisetree_check.ico</ApplicationIcon>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CheckCruise|AnyCPU'">
-    <OutputPath>bin\CheckCruise\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CheckCruise|x86'">
-    <OutputPath>bin\x86\CheckCruise\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>CheckCruise.Program</StartupObject>
-  </PropertyGroup>
+  
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  
   <ItemGroup>
-    <Compile Include="CheckCruiseAnalysis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CheckCruiseAnalysis.Designer.cs">
-      <DependentUpon>CheckCruiseAnalysis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CheckCruiseReports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CheckCruiseReports.Designer.cs">
-      <DependentUpon>CheckCruiseReports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreateCheckFile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateCheckFile.Designer.cs">
-      <DependentUpon>CreateCheckFile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="createSummaryReports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dataBaseCommands.cs" />
-    <Compile Include="DefaultTolerances.cs" />
-    <Compile Include="elementSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="elementSelection.Designer.cs">
-      <DependentUpon>elementSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationDisplayVolume.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationReportRTF.cs" />
-    <Compile Include="MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CheckCruiseAnalysis.resx">
-      <DependentUpon>CheckCruiseAnalysis.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CheckCruiseReports.resx">
-      <DependentUpon>CheckCruiseReports.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateCheckFile.resx">
-      <DependentUpon>CreateCheckFile.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="elementSelection.resx">
-      <DependentUpon>elementSelection.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegionalTolerances.resx">
-      <DependentUpon>RegionalTolerances.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
+	<None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
+    <!--<Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="RegionalTolerances.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegionalTolerances.Designer.cs">
-      <DependentUpon>RegionalTolerances.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ResultsList.cs" />
-    <Compile Include="TextReportHeaders.cs" />
-    <Compile Include="TolerancesList.cs" />
-    <Compile Include="Utilities.cs" />
+    </Compile>-->
   </ItemGroup>
+  
   <ItemGroup>
-    <None Include="Resources\FVS_12.png" />
+    <PackageReference Include="CruiseDAL.V2" Version="2.7.3.103" />
+	  <!--<PackageReference Include="System.Data.SQLite.Core" Version="1.0.110" />-->
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.0.2" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\DataSources\createCheckFile.CheckCruiseUnits.datasource" />
-    <None Include="Properties\DataSources\createCheckFile.OriginalCruiseUnits.datasource" />
-    <None Include="Properties\DataSources\RegionalTolerances.TolerancesList.datasource" />
-    <None Include="Properties\DataSources\TolerancesList.datasource" />
-    <None Include="Resources\shieldImage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="cruisetree_check.ico" />
-    <Content Include="Resources\cruisetree_check.ico">
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CruiseDAL.V2">
-      <Version>2.5.0.31</Version>
-    </PackageReference>
-    <PackageReference Include="FMSC.ORM">
-      <Version>2.4.3</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SQLite">
-      <Version>1.0.112</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SQLite.Core">
-      <Version>1.0.112</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
