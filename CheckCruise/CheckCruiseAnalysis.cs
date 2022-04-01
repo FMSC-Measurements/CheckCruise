@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using CruiseDAL.DataObjects;
 using CruiseDAL.Schema;
-using System.Data.SQLite;
 
 namespace CheckCruise
 {
@@ -53,7 +52,6 @@ namespace CheckCruise
 
 
                 //  make sure tolerances have been selected.
-                db.checkCruiseFilename = checkCruiseFile;
                 db.DAL = new CruiseDAL.DAL(checkCruiseFile);
                 tolList = db.getTolerances();
                 if (tolList.Count == 0)
@@ -170,7 +168,6 @@ namespace CheckCruise
             }   //  endif
 
             int nthResult = 0;
-            db.checkCruiseFilename = checkCruiseFile;
             db.DAL = new CruiseDAL.DAL(checkCruiseFile);
             List<TreeDO> checkTrees = db.getTrees();
             List<TreeCalculatedValuesDO> checkCalculatedTrees = db.getCalculatedTrees();
@@ -189,7 +186,6 @@ namespace CheckCruise
 
 
             //  pull appropriate tables from original cruise file
-            db.fileName = originalCruiseFile;
             db.DAL = new CruiseDAL.DAL(originalCruiseFile);
             List<TreeDO> originalTrees = db.getTrees();
             List<TreeCalculatedValuesDO> originalCalculatedTrees = db.getCalculatedTrees();

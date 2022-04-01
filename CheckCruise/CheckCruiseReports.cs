@@ -57,7 +57,6 @@ namespace CheckCruise
                 else checkCruiseFilename.Text = checkCruiseFile;
             }   //  endif
 
-            db.checkCruiseFilename = checkCruiseFile;
             db.DAL = new CruiseDAL.DAL(checkCruiseFile);
             //  if the check file has not been processed, no volumes will be in TreeCalculatedValues
             //  let user know the file needs to be processed before continuing
@@ -135,7 +134,6 @@ namespace CheckCruise
             }   //  end while
 
             //  make sure the results table has something in it.  If not, means the analysis was not completed.
-            db.checkCruiseFilename = checkCruiseFile;
             db.DAL = new CruiseDAL.DAL(checkCruiseFile);
             List<ResultsList> resultsList = db.getResultsTable("","");
             if (resultsList.Count == 0)
@@ -248,7 +246,6 @@ namespace CheckCruise
             createSummaryReports csr = new createSummaryReports();
             csr.cruiserFile = checkCruiseFile.Replace("_CC.cruise", ".cruise");
             csr.checkCruiseFile = checkCruiseFile;
-            csr.db.checkCruiseFilename = checkCruiseFile;
             csr.db.DAL = new CruiseDAL.DAL(checkCruiseFile);
             if (createSummaryBySale.Checked == true)
                 csr.reportToOutput = 1;
@@ -281,8 +278,7 @@ namespace CheckCruise
                 //csr.reportToOutput = 3;
             }   //  endif
             //  ppull log stock table for any log elements
-            db.fileName = csr.cruiserFile;
-            db.DAL = new CruiseDAL.DAL(db.fileName);
+            db.DAL = new CruiseDAL.DAL(csr.cruiserFile);
             List<LogStockDO> checkLogs = db.getLogStock();
             if (checkLogs.Count > 0)
                 csr.checkLogs = checkLogs;
@@ -304,7 +300,6 @@ namespace CheckCruise
             if(reportBySale.Checked == true)
             {
                 //  check cruiser data
-                db.checkCruiseFilename = checkCruiseFile;
                 db.DAL = new CruiseDAL.DAL(checkCruiseFile);
                 checkTrees = db.getTrees();
                 checkLogs = db.getLogStock();
@@ -316,7 +311,6 @@ namespace CheckCruise
 
                 //  cruiser data
                 originalCruiseFile = checkCruiseFile.Replace("_CC.cruise",".cruise");
-                db.fileName = originalCruiseFile;
                 db.DAL = new CruiseDAL.DAL(originalCruiseFile);
                 cruiserTrees = db.getTrees();
                 cruiserCalculatedTrees = db.getCalculatedTrees();
@@ -325,7 +319,6 @@ namespace CheckCruise
             else if(reportByCruiser.Checked == true)
             {
                 //  pull data by check cruiser initials
-                db.checkCruiseFilename = checkCruiseFile;
                 db.DAL = new CruiseDAL.DAL(checkCruiseFile);
                 cruiseTolerances = db.getTolerances();
                 currRegion = db.getRegion();
@@ -350,7 +343,6 @@ namespace CheckCruise
 
                 //  and cruiser data
                 originalCruiseFile = checkCruiseFile.Replace("_CC.cruise", ".cruise");
-                db.fileName = originalCruiseFile;
                 db.DAL = new CruiseDAL.DAL(originalCruiseFile);
                 cruiserTrees = db.getTrees(cruiserInitials.Text.ToString());
                 cruiserCalculatedTrees = db.getCalculatedTrees(cruiserInitials.Text.ToString());
@@ -507,8 +499,7 @@ namespace CheckCruise
                 //  June 2015 -- volume section has been revised
                 //  check for include volume is moved to volume output
                 EvaluationDisplayVolume edv = new EvaluationDisplayVolume();
-                edv.db.checkCruiseFilename = db.checkCruiseFilename;
-                edv.db.DAL = db.DAL;
+                edv.db = db;
                 edv.checkResults = checkResults;
                 edv.cruiserCalculatedTrees = cruiserCalculatedTrees;
                 int nResult = 0;

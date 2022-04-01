@@ -26,7 +26,6 @@ namespace CheckCruise
 
         public void setupDialog()
         {
-            dbc.checkCruiseFilename = checkFileName;
             dbc.DAL = new CruiseDAL.DAL(checkFileName);
 
             //  What's the region?

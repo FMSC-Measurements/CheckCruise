@@ -72,7 +72,6 @@ namespace CheckCruise
 
             //  check for fatal errors before continuing
             string[] errors;
-            dbc.fileName = fileName;
             dbc.DAL = new CruiseDAL.DAL(fileName);
             //bool nthResult = dbc.DAL.HasCruiseErrors(out errors);
             bool nthResult = false;
@@ -234,7 +233,6 @@ namespace CheckCruise
             }   //  end foreach loop
 
             //  delete these units from the check cruise tree table
-            dbc.checkCruiseFilename = cc_fileName;
             dbc.DAL = new CruiseDAL.DAL(cc_fileName);
             foreach(CheckCruiseUnits utd in unitsToDelete)
                 dbc.deleteUnit(utd.CC_Unit, utd.CC_Stratum);
@@ -344,7 +342,6 @@ namespace CheckCruise
 
             //  loop by check cruiser units selected and retrieve tree data for that unit
             dataBaseCommands db = new dataBaseCommands();
-            db.fileName = fileName;
             db.DAL = new CruiseDAL.DAL(fileName);
             List<TreeDO> tList = db.getTrees();
             List<LogDO> logList = db.getLogs();

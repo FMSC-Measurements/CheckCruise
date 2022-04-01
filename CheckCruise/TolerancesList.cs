@@ -1,10 +1,12 @@
-﻿using System;
+﻿using FMSC.ORM.EntityModel.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace CheckCruise
 {
+    [Table("Tolerances")]
     public class TolerancesList
     {
         public string T_Element { get; set; }

@@ -33,7 +33,6 @@ namespace CheckCruise
 
         public string generateTextReports()
         {
-            db.checkCruiseFilename = checkCruiseFile;
             db.DAL = new CruiseDAL.DAL(checkCruiseFile);
             checkResults = db.getResultsTable("",markInits);
             cruiseTolerances = db.getTolerances();
