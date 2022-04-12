@@ -38,7 +38,7 @@ namespace CheckCruise
             OpenFileDialog browseDialog = new OpenFileDialog();
 
             //  set filter options and filter index
-            browseDialog.Filter = "Cruise files (.cruise)|*.cruise|All Files (*.*)|*.*";
+            browseDialog.Filter = "Cruise files (.cruise)|*.cruise|Cruise Files - V3|*.crz3|All Files (*.*)|*.*";
             browseDialog.FilterIndex = 1;
 
             browseDialog.Multiselect = false;
@@ -57,11 +57,31 @@ namespace CheckCruise
                 {
                     fileName = browseDialog.FileName;
                     //  confirm it is a cruise file
-                    if(!fileName.EndsWith(".cruise") && !fileName.EndsWith(".CRUISE"))
+                    if(!fileName.EndsWith(".cruise") && !fileName.EndsWith(".CRUISE") && !fileName.EndsWith(".crz3") && !fileName.EndsWith(".CRZ3"))
                     {
                         MessageBox.Show("File selected is not a cruise file.","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         return;
                     }   //  endif not a cruise file
+                    else if (fileName.EndsWith(".crz3") || fileName.EndsWith(".CRZ3"))
+                    {
+
+                        string processFileName = fileName;
+
+                        processFileName = processFileName.Substring(0, processFileName.Length - 5);
+
+                        processFileName = processFileName + ".process";
+
+                        if(File.Exists(processFileName))
+                        {
+                            fileName = processFileName;
+                        }//end if
+                        else
+                        {
+                            MessageBox.Show("The file selected has not been processed; please process file.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }//end else
+
+
+                    }//END ELSE IF
                 }   //  endif user selects no                
             };  //  end while
 
