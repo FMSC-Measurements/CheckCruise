@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckCruise.Test", "CheckCr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75028E3A-BAAD-473B-9329-E6B6B6568B8E}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Build_Installer.cmd = Build_Installer.cmd
 		Build_Release.cmd = Build_Release.cmd
+		Build_ZipArtifact.cmd = Build_ZipArtifact.cmd
+		CheckCruise.iss = CheckCruise.iss
 	EndProjectSection
 EndProject
 Global
