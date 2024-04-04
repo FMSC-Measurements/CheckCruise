@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CheckCruise
+namespace CheckCruise.Reports
 {
     public class EvaluationReportRTF
     {
@@ -142,13 +142,11 @@ namespace CheckCruise
                                                   "BBBB\\qr\\intbl\\cell",
                                                   "DDDD\\qr\\intbl\\cell",
                                                   "\\row"};
-        public string[] VolumeHeaderPrimary = new string[30] {"\\pard\\par\\f1\\fs22\\b1\\qc Volume for Measured Trees\\b0\\par",
+        public string[] VolumeHeaderPrimary = new string[28] {"\\pard\\par\\f1\\fs22\\b1\\qc Volume for Measured Trees\\b0\\par",
                                                               "\\pard\\f0\\fs18",
                                                               "\\trowd\\trgaph144\\trqc",
                                                               "\\clbrdrt\\brdrs\\clbrdrb\\brdrs\\clbrdrl\\brdrs\\clbrdrr\\brdrs",
                                                               "\\cellx1000",
-                                                              "\\clbrdrt\\brdrs\\clbrdrb\\brdrs\\clbrdrl\\brdrs\\clbrdrr\\brdrs",
-                                                              "\\cellx5500",
                                                               "\\clbrdrt\\brdrs\\clbrdrb\\brdrs\\clbrdrl\\brdrs\\clbrdrr\\brdrs",
                                                               "\\cellx10000",
                                                               "\\qc\\intbl\\cell",
@@ -172,13 +170,11 @@ namespace CheckCruise
                                                               "BDFT Gross\\qc\\intbl\\cell",
                                                               "BDFT Net\\qc\\intbl\\cell",
                                                               "\\row"};
-        public string[] VolumeHeaderSecondary = new string[30] {"\\pard\\par\\f1\\fs22\\b1\\qc Volume for Measured Trees\\b0\\par",
+        public string[] VolumeHeaderSecondary = new string[28] {"\\pard\\par\\f1\\fs22\\b1\\qc Volume for Measured Trees\\b0\\par",
                                                               "\\pard\\f0\\fs18",
                                                               "\\trowd\\trgaph144\\trqc",
                                                               "\\clbrdrt\\brdrs\\clbrdrb\\brdrs\\clbrdrl\\brdrs\\clbrdrr\\brdrs",
                                                               "\\cellx1000",
-                                                              "\\clbrdrt\\brdrs\\clbrdrb\\brdrs\\clbrdrl\\brdrs\\clbrdrr\\brdrs",
-                                                              "\\cellx5500",
                                                               "\\clbrdrt\\brdrs\\clbrdrb\\brdrs\\clbrdrl\\brdrs\\clbrdrr\\brdrs",
                                                               "\\cellx10000",
                                                               "\\qc\\intbl\\cell",
@@ -322,7 +318,7 @@ namespace CheckCruise
                                                  "XXX percent and the overall accuracy score must be at least ZZZ percent.  ",
                                                  "In addition, the calculated volumes must be within the specified tolerance.\\par",
                                                  "\\par"};
-        public string[] CommentSection = new string[32] {"Recommendation/Comments:\\par",
+        public string[] CommentSection = new string[27] {"Recommendation/Comments:\\par",
                                                        "\\trowd\\trgaph144\\trrh350",
                                                        "\\clbrdrb\\brdrs",
                                                        "\\cellx8600",
@@ -347,14 +343,23 @@ namespace CheckCruise
                                                        "\\trowd\\trgaph144\\trrh500",
                                                        "\\clbrdrb\\brdrs",
                                                        "\\cellx4000",
-                                                       "\\cellx5000",
-                                                       "\\clbrdrb\\brdrs",
-                                                       "\\cellx7000",
-                                                       "\\intbl\\cell",
-                                                       "\\intbl\\cell",
                                                        "\\intbl\\cell",
                                                        "\\row"};
-        public string[] SignatureBlock = new string[8] {"\\trowd\\trgaph144",
+        public string[] SignatureBlock = new string[22] {"\\trowd\\trgaph144",
+                                                      "\\cellx7000",
+                                                      "Print Name of Certified Check Cruiser\\intbl\\cell",
+                                                      "\\row",
+                                                      "\\trowd\\trgaph144\\trrh500",
+                                                      "\\clbrdrb\\brdrs",
+                                                      "\\cellx4000",
+                                                      "\\cellx5000",
+                                                      "\\clbrdrb\\brdrs",
+                                                      "\\cellx7000",
+                                                      "\\intbl\\cell",
+                                                      "\\intbl\\cell",
+                                                      "\\intbl\\cell",
+                                                      "\\row",
+                                                      "\\trowd\\trgaph144",
                                                       "\\cellx4000",
                                                       "\\cellx5000",
                                                       "\\cellx7000",

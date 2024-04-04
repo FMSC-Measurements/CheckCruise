@@ -19,6 +19,28 @@ namespace CheckCruise.Test
 
         }
 
+
+        [Fact]
+        public void GetUnitStrata()
+        {
+            var init = new DatabaseInitializer_V2();
+
+            using var db = init.CreateDatabase();
+            var dbCmds = new dataBaseCommands(db);
+
+            var unitStrata = dbCmds.GetUnitStrata();
+            unitStrata.Should().NotBeEmpty();
+
+            unitStrata.Should().HaveCount(init.UnitStrata.Count());
+
+            unitStrata.All(x => !String.IsNullOrEmpty(x.CuttingUnitCode)).Should().BeTrue();
+            unitStrata.All(x => !String.IsNullOrEmpty(x.StratumCode)).Should().BeTrue();
+            unitStrata.All(x => !String.IsNullOrEmpty(x.Method)).Should().BeTrue();
+            unitStrata.All(x => x.CuttingUnit_CN > 0).Should().BeTrue();
+            unitStrata.All(x => x.Stratum_CN > 0).Should().BeTrue();
+
+        }
+
         [Theory]
         [InlineData("Results")]
         [InlineData("Tolerances")]
@@ -128,7 +150,7 @@ namespace CheckCruise.Test
             var tolFaker = new AutoFaker<TolerancesList>();
             var tol = tolFaker.Generate();
 
-            dbCmds.saveTolerances(new[] {tol});
+            dbCmds.saveTolerances(new[] { tol });
 
             var tolAgain = dbCmds.getTolerances().Single();
             tolAgain.Should().BeEquivalentTo(tol);

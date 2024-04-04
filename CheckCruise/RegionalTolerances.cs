@@ -1,40 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CheckCruise
 {
     public partial class RegionalTolerances : Form
     {
-        #region
-            public string checkFileName;
-            dataBaseCommands dbc = new dataBaseCommands();
+            dataBaseCommands CheckCruiseDataservice { get; }
             BindingSource tolerancesBindingSource = new BindingSource();
             private string currRegion;
             List<TolerancesList> tolList = new List<TolerancesList>();
-        #endregion
 
-        public RegionalTolerances()
+        protected RegionalTolerances()
         {
             InitializeComponent();
         }
 
+        public RegionalTolerances(dataBaseCommands checkCruiseDataservice)
+            : this()
+        {
+            CheckCruiseDataservice = checkCruiseDataservice ?? throw new ArgumentNullException(nameof(checkCruiseDataservice));
+        }
+
         public void setupDialog()
         {
-            dbc.DAL = new CruiseDAL.DAL(checkFileName);
 
             //  What's the region?
-            currRegion = dbc.getRegion();
+            currRegion = CheckCruiseDataservice.getRegion();
             currentRegion.Text = currRegion;
 
             //  Grab any tolerances data or pull regional defaults
             //  this command pulls tolerances from current check cruise file
-            tolList = dbc.getTolerances();
+            tolList = CheckCruiseDataservice.getTolerances();
             //  this pulls the default regional tolerances if the tolerance table in the file is empty
             if (tolList.Count == 0)
             {
@@ -325,7 +322,7 @@ namespace CheckCruise
             //  add date stamp
             tolList[0].T_DateStamp = DateTime.Now.ToString();
 
-            dbc.saveTolerances(tolList);
+            CheckCruiseDataservice.saveTolerances(tolList);
 
             Close();
             return;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CheckCruise.Models;
 using CruiseDAL;
 using CruiseDAL.DataObjects;
 
@@ -11,7 +12,7 @@ namespace CheckCruise
     public class dataBaseCommands
     {
         #region
-        public CruiseDAL.DAL DAL { get; set; }
+        public CruiseDAL.DAL DAL { get; }
 
         public dataBaseCommands()
         {
@@ -22,13 +23,17 @@ namespace CheckCruise
             DAL = dAL ?? throw new ArgumentNullException(nameof(dAL));
         }
 
-        public dataBaseCommands(string filePath)
-        {
-            DAL = new DAL(filePath);
-        }
-
         
         #endregion
+
+
+        public IReadOnlyList<UnitStratum> GetUnitStrata()
+        {
+            return DAL.Query<UnitStratum>("SELECT cu.Code as CuttingUnitCode, st.Code AS StratumCode, cu.CuttingUnit_CN, st.Stratum_CN, st.Method AS Method " +
+                "FROM CuttingUnitStratum AS cust " +
+                "JOIN CuttingUnit AS cu USING (CuttingUnit_CN) " +
+                "JOIN Stratum AS st USING (Stratum_CN)").ToArray();
+        }
 
         public bool doesTableExist(string tableName)
         {
@@ -181,9 +186,9 @@ namespace CheckCruise
         }   //  end createResultsList
 
 
-        public List<SaleDO> getSale()
+        public SaleDO getSale()
         {
-            return DAL.From<SaleDO>().Read().ToList();
+            return DAL.From<SaleDO>().Read().FirstOrDefault();
         }   //  end getSale
 
         public List<StratumDO> getStrata()
@@ -236,13 +241,7 @@ namespace CheckCruise
         }   //  end getTrees by cruiser
 
 
-        public string getCheckCruiserInitials()
-        {
-            var globList = DAL.From<GlobalsDO>().Query().ToArray();
-            var globItem = globList.FirstOrDefault(g => g.Block == "CheckCruise" && g.Key == "Check Cruiser Initials");
-                
-            return globItem?.Value;
-        }   //  end getCheckCruiserInitials
+
 
 
         public void saveTrees(List<TreeDO> tList)
@@ -262,15 +261,7 @@ namespace CheckCruise
         }   //  end getCurrentStratum
 
 
-        public ArrayList getCruiserInitials()
-        {
-            //  pull cruiser initials from results table
-            var initials = DAL.QueryScalar<string>("SELECT DISTINCT R_MarkerInitials FROM Results")
-                .Where(x => string.IsNullOrEmpty(x) == false)
-                .ToArray();
 
-            return new ArrayList(initials);
-        }   //  end getCruiserInitials
 
         public void deleteUnit(string unitToDelete, string stratumToDelete)
         {
@@ -314,15 +305,15 @@ namespace CheckCruise
 
         public string getRegion()
         {
-            var saleList = getSale();
-            return saleList.First().Region;
+            var sale = getSale();
+            return sale.Region;
         }   //  end getRegion
 
 
         public string getSaleName()
         {
-            var saleList = getSale();
-            return saleList.First().Name;
+            var sale = getSale();
+            return sale.Name;
         }   //  end getSaleName
 
 
@@ -336,22 +327,25 @@ namespace CheckCruise
             }   //    endif
         }   //  end clearLogTable
 
-
-        public void saveInitials(string checkCruiseInititals)
+        public ArrayList getCruiserInitials()
         {
-            List<GlobalsDO> globList = DAL.From<GlobalsDO>().Read().ToList();
-            GlobalsDO g = new GlobalsDO();
-            g.Block = "CheckCruise";
-            g.Key = "Check Cruiser Initials";
-            g.Value = checkCruiseInititals;
-            globList.Add(g);
-            foreach (GlobalsDO gdo in globList)
-            {
-                if (gdo.DAL == null)
-                    gdo.DAL = DAL;
-                gdo.Save();
-            }   //  end foreach loop
-        }   //  end saveInititals
+            //  pull cruiser initials from results table
+            var initials = DAL.QueryScalar<string>("SELECT DISTINCT R_MarkerInitials FROM Results")
+                .Where(x => string.IsNullOrEmpty(x) == false)
+                .ToArray();
+
+            return new ArrayList(initials);
+        }   //  end getCruiserInitials
+
+        public string getCheckCruiserInitials()
+        {
+            return DAL.ReadGlobalValue("CheckCruise", "Check Cruiser Initials");
+        }
+
+        public void SaveCheckCruiserInitials(string checkCruiseInititals)
+        {
+            DAL.WriteGlobalValue("CheckCruise", "Check Cruiser Initials", checkCruiseInititals);
+        } 
 
         // TODO what does this do?... and test
         public void updateTreeMeasurements()
