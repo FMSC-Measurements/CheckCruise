@@ -69,7 +69,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.Size = new System.Drawing.Size(133, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter cruise filename:";
             // 
@@ -100,7 +100,7 @@
             this.label2.Size = new System.Drawing.Size(321, 39);
             this.label2.TabIndex = 3;
             this.label2.Text = "From the Original Cruise list, select the cutting units to include in the check c" +
-                "ruise file.";
+    "ruise file.";
             // 
             // label3
             // 
@@ -266,7 +266,7 @@
             this.includeLogs.Font = new System.Drawing.Font("Arial", 9.75F);
             this.includeLogs.Location = new System.Drawing.Point(18, 326);
             this.includeLogs.Name = "includeLogs";
-            this.includeLogs.Size = new System.Drawing.Size(140, 20);
+            this.includeLogs.Size = new System.Drawing.Size(139, 20);
             this.includeLogs.TabIndex = 15;
             this.includeLogs.Text = "Include Log records";
             this.includeLogs.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@
             this.label6.Size = new System.Drawing.Size(216, 85);
             this.label6.TabIndex = 16;
             this.label6.Text = "Please enter the check cruiser initials.  These are used to complete the check cr" +
-                "uise later.  Be sure to record them when collecting check cruise data.";
+    "uise later.  Be sure to record them when collecting check cruise data.";
             // 
             // exitButton
             // 
@@ -308,7 +308,7 @@
             this.excludeMeasurements.Font = new System.Drawing.Font("Arial", 9.75F);
             this.excludeMeasurements.Location = new System.Drawing.Point(18, 375);
             this.excludeMeasurements.Name = "excludeMeasurements";
-            this.excludeMeasurements.Size = new System.Drawing.Size(240, 20);
+            this.excludeMeasurements.Size = new System.Drawing.Size(239, 20);
             this.excludeMeasurements.TabIndex = 19;
             this.excludeMeasurements.Text = "Exclude cruiser tree measurements?";
             this.excludeMeasurements.UseVisualStyleBackColor = true;

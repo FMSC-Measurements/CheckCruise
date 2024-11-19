@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.cruiserInitials = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.label1.Size = new System.Drawing.Size(289, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "If desired, click the button to review regional tolerances before starting the an" +
-                "alysis.";
+    "alysis.";
             // 
             // reviewTolerances
             // 
@@ -65,6 +67,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cruiserInitials);
             this.groupBox1.Controls.Add(this.compareButton);
             this.groupBox1.Controls.Add(this.browseCheck);
             this.groupBox1.Controls.Add(this.browseOriginal);
@@ -74,7 +78,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(23, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(533, 153);
+            this.groupBox1.Size = new System.Drawing.Size(533, 239);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please select or enter filenames for analysis.";
@@ -82,7 +86,7 @@
             // compareButton
             // 
             this.compareButton.AutoSize = true;
-            this.compareButton.Location = new System.Drawing.Point(226, 106);
+            this.compareButton.Location = new System.Drawing.Point(229, 183);
             this.compareButton.Name = "compareButton";
             this.compareButton.Size = new System.Drawing.Size(83, 26);
             this.compareButton.TabIndex = 6;
@@ -129,7 +133,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 16);
+            this.label3.Size = new System.Drawing.Size(135, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "CHECK CRUISE FILE";
             // 
@@ -138,13 +142,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 16);
+            this.label2.Size = new System.Drawing.Size(150, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "ORIGINAL CRUISE FILE";
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(456, 232);
+            this.exitButton.Location = new System.Drawing.Point(456, 307);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 3;
@@ -152,11 +156,28 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.onExit);
             // 
+            // cruiserInitials
+            // 
+            this.cruiserInitials.Location = new System.Drawing.Point(284, 129);
+            this.cruiserInitials.MaxLength = 3;
+            this.cruiserInitials.Name = "cruiserInitials";
+            this.cruiserInitials.Size = new System.Drawing.Size(68, 22);
+            this.cruiserInitials.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(100, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Enter Check Cruiser Initials";
+            // 
             // CheckCruiseAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 271);
+            this.ClientSize = new System.Drawing.Size(568, 372);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reviewTolerances);
@@ -187,5 +208,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button compareButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox cruiserInitials;
     }
 }

@@ -48,8 +48,11 @@ namespace CheckCruise
 
         private void onTolerances(object sender, EventArgs e)
         {
+
             RegionalTolerances rt = new RegionalTolerances();
             rt.checkFileName = checkFileName;
+
+
             rt.setupDialog();
             rt.ShowDialog();
 

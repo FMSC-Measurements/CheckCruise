@@ -52,19 +52,6 @@ namespace CheckCruise
             TRH.TextHeader[2] = TRH.TextHeader[2].Replace("XXXX", DateTime.Now.ToString());
             switch (reportToOutput)
             {
-                case 1:
-                    //  create output filename
-                    outputFileName = checkCruiseFile.Replace("_CC.cruise", "_SaleSummary.txt");
-
-                    TRH.saleSummaryHeader[1] = TRH.saleSummaryHeader[1].Replace("XXXX", currSaleName);
-                    TRH.saleSummaryHeader[2] = TRH.saleSummaryHeader[2].Replace("XXXX", cruiserFile);
-                    TRH.saleSummaryHeader[3] = TRH.saleSummaryHeader[3].Replace("XXXX", checkCruiseFile);
-                    TRH.saleSummaryHeader[4] = TRH.saleSummaryHeader[4].Replace("XX", cruiseTolerances.Count.ToString());
-                    TRH.saleSummaryHeader[5] = TRH.saleSummaryHeader[5].Replace("XXXX", cruiseTolerances[0].T_DateStamp);
-
-                    //  fill fieldLengths
-                    fieldLengths = new int[17] { 1, 4, 9, 9, 8, 6, 14, 12, 9, 5, 6, 3, 6, 3, 6, 3, 6 };
-                    break;
                 case 2:
                     //  Output filename
                     StringBuilder addCruiser = new StringBuilder();
@@ -92,6 +79,22 @@ namespace CheckCruise
                     //  fill fieldLengths
                     fieldLengths = new int[14] { 1, 8, 10, 10, 11, 9, 5, 6, 3, 6, 3, 6, 3, 6 };
                     break;
+                case 1:
+                default:
+                    //  create output filename
+                    outputFileName = checkCruiseFile.Replace("_CC.cruise", "_SaleSummary.txt");
+
+                    TRH.saleSummaryHeader[1] = TRH.saleSummaryHeader[1].Replace("XXXX", currSaleName);
+                    TRH.saleSummaryHeader[2] = TRH.saleSummaryHeader[2].Replace("XXXX", cruiserFile);
+                    TRH.saleSummaryHeader[3] = TRH.saleSummaryHeader[3].Replace("XXXX", checkCruiseFile);
+                    TRH.saleSummaryHeader[4] = TRH.saleSummaryHeader[4].Replace("XX", cruiseTolerances.Count.ToString());
+                    TRH.saleSummaryHeader[5] = TRH.saleSummaryHeader[5].Replace("XXXX", cruiseTolerances[0].T_DateStamp);
+
+                    //  fill fieldLengths
+                    fieldLengths = new int[17] { 1, 4, 9, 9, 8, 6, 14, 12, 9, 5, 6, 3, 6, 3, 6, 3, 6 };
+                    break;
+
+
             }   //  end switch on reportToOutput
 
             Cursor.Current = Cursors.WaitCursor;

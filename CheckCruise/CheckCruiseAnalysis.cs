@@ -53,6 +53,15 @@ namespace CheckCruise
 
                 //  make sure tolerances have been selected.
                 db.DAL = new CruiseDAL.DAL(checkCruiseFile);
+
+                bool tableExist = db.doesTableExist("Tolerances");
+                if (!tableExist)
+                {
+                    //  tolerances table doesn't exist -- create it in the check cruise file
+                    db.createNewTable("Tolerances");
+                    MessageBox.Show("This is a new check cruise file.\nIt does not contain regional tolerances.\nBe sure to enter those before doing any analysis.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }   //  endif on tolerances table
+
                 tolList = db.getTolerances();
                 if (tolList.Count == 0)
                 {
@@ -60,6 +69,17 @@ namespace CheckCruise
                     Close();
                     return 0;
                 }   //  endif
+                string checkCruiserInitials = db.getCheckCruiserInitials();
+                cruiserInitials.Text = checkCruiserInitials;
+
+                tableExist = db.doesTableExist("Results");
+                if (!tableExist)
+                {
+                    //  results table doesn't exist --  create it
+                    db.createNewTable("Results");
+                }   //  endif on results table
+
+
             }   //  endif
             return 1;
         }   //  end setupDialog
@@ -175,7 +195,21 @@ namespace CheckCruise
             List<LogStockDO> checkLogs = db.getLogStock();
             justStrataUnits = db.getStrataUnit();
             string currRegion = db.getRegion();
-            string checkCruiserInitials = db.getCheckCruiserInitials();
+            string checkCruiserInitials = cruiserInitials.Text;
+            if (checkCruiserInitials == "")
+            {
+                MessageBox.Show("No Check Cruiser Initials!\nPlease enter check cruiser initials.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                //Close();
+                cruiserInitials.Focus();
+                return;
+            }
+            else
+            {
+                // save check cruiser intials
+                string checkCI = db.getCheckCruiserInitials();
+                if(checkCI == null)
+                    db.saveInitials(checkCruiserInitials.ToString());
+            }
             // check for volume in check cruise trees
             if (checkCalculatedTrees.Sum(c => c.GrossCUFTPP) == 0.0 && checkCalculatedTrees.Sum(c => c.GrossBDFTPP) == 0.0)
             {
@@ -240,7 +274,14 @@ namespace CheckCruise
             //  July 2015 -- per conversation with C.Bodenhausen, looks like all count and measure
             //  trees need to go in the results table.  Mainly because a count record could be
             //  called in by the check cruiser and needs to be noted in the results table
-            db.clearResults();
+            bool tableExist = db.doesTableExist("Results");
+            if (!tableExist)
+            {
+                //  results table doesn't exist --  create it
+                db.createNewTable("Results");
+            }   //  endif on results table
+            else
+                db.clearResults();
             //fillResultsTable(checkTrees);
             //  October 2015 -- checkTrees has all count/mesure trees but also
             //  has trees not checked by the check cruiser.  

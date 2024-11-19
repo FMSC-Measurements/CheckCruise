@@ -32,6 +32,15 @@ namespace CheckCruise
             currRegion = dbc.getRegion();
             currentRegion.Text = currRegion;
 
+            //check for Tolerance Table
+            bool tableExist = dbc.doesTableExist("Tolerances");
+            if (!tableExist)
+            {
+                //  tolerances table doesn't exist -- create it in the check cruise file
+                dbc.createNewTable("Tolerances");
+               // MessageBox.Show("This is a new check cruise file.\nIt does not contain regional tolerances.\nBe sure to enter those before doing any analysis.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }   //  endif on tolerances table
+
             //  Grab any tolerances data or pull regional defaults
             //  this command pulls tolerances from current check cruise file
             tolList = dbc.getTolerances();

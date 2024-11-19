@@ -484,6 +484,7 @@ FROM Tree;");
 
         public void clearResults()
         {
+
             DAL.Execute("DELETE FROM Results;");
         }   // end clearResults
         
